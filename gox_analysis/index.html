@@ -7,6 +7,7 @@
   <style>
     body { background: #181818; color: #e0e0e0; font: 80%/1.45em "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; margin: 0;}
     a { color: #FFFFFF; }
+    ul li { margin: 0 16px 16px 0; vertical-align: top; }
   </style>
   <script src="assets/jquery-1.8.2.js"></script>
   <script src="assets/jquery.dataTables.js"></script>
@@ -132,11 +133,21 @@
   <div id="map1" style="width: 800px; height: 600px; margin-left: auto; margin-right: auto;"></div>
   <div style="height: 2em"></div>
   <div id="dyntable"></div>
-<!--
-  <button id="focus-single">Focus on Australia</button>
-  <button id="focus-multiple">Focus on Australia and Japan</button>
-  <button id="focus-init">Return to the initial state</button>
--->
-  <div><br/><br/><p>Built using <a href="http://jvectormap.com/">jVectorMap</a> and <a href="https://datatables.net/">DataTables</a> by W.J. van der Laan</p></div>
+  <div style="height: 2em"></div>
+  <div style="padding-left: 2em">
+    <p style="font-weight: bold">Notes</p>
+    <ul>
+      <li>HK (Hong Kong, not shown on the map) shows a lot of sells. This is due to the THK (Tibanne Hong Kong) trading bot operated by Mtgox itself.
+      <a href="http://www.reddit.com/r/Bitcoin/comments/2081as/analysis_of_the_leaked_mtgox_database/" target="_blank">discussion on reddit here</a>. 
+      <li>The data is not entirely complete: 2013-04 is only populated until the 16th and lacks country data.
+      <li>The unique user numbers look quite low. I looked at the unique userids per country over the course of about a year. In total there are 89518 unique userids used in the trade logs mentioned (2012-11 to 2013-12).
+      It could be that the leaked data is not complete. Or maybe they have loads of inactive users that registered in 2010/2011 and traded a bit and quit.
+      The user IDs themselves they go up to 833612. So they may be correct about having almost a million registered users. However, only about 10% of them appear in the trade logs examined.
+      <li><a href="data/trade_data_per_country.json" target="_blank">Raw data</a> in JSON format. 
+          <a href="https://github.com/laanwj/laanwj.github.io/blob/master/gox_analysis/generate/trade_totals.py" target="_blank">Generation script</a> (Python). 
+          <a href="https://github.com/laanwj/laanwj.github.io/blob/master/gox_analysis/index.html" target="_blank">website source</a> on Github (patches welcome).
+    </ul>
+  </div>
+  <div><p>Built using <a href="http://jvectormap.com/">jVectorMap</a> and <a href="https://datatables.net/">DataTables</a> by W.J. van der Laan</p></div>
 </body>
 </html>
